@@ -2,6 +2,10 @@
 
 Simple ToDo App works based on browser inbuilt [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
+## Demo
+
+[https://ameerpc.github.io/todoApp/build/index.html](https://ameerpc.github.io/todoApp/build/index.html)
+
 ## Available Scripts
 
 In the project directory, you can run:
