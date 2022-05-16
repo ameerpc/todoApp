@@ -10,18 +10,15 @@ const Todo = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         
-        if(event.target.value == 'Save') {
+        if(event.target.value === 'Save') {
             console.log('Saved !')
             setTodolist(previousValue => {return [ ...previousValue, {title: taskhead, para: taskpara}]})
             localStorage.setItem(taskhead, taskpara)
         }
-        else if(event.target.value == 'Delete') {
+        else if(event.target.value === 'Delete') {
             console.log('delete')
             setTodolist(todolist.filter(item => item.title !== taskhead))
             localStorage.removeItem(taskhead)
-        }
-        else if(event.target.value == 'Done') {
-            console.log('asd')
         }
         
     }
@@ -29,12 +26,6 @@ const Todo = () => {
         console.log('Done ' + task)
         setTodolist(todolist.filter(item => item.title !== task))
         localStorage.removeItem(task)
-    }
-    const selectTask = (event) => {
-        event.preventDefault()
-        setTaskhead(event.target.tasktitle)
-        setTaskpara(event.target.taskpara)
-        console.log('done')
     }
 
     useEffect(() => {

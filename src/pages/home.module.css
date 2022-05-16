@@ -9,8 +9,8 @@
 }
 
 @media screen and (max-width: 600px) {
-.banner {
-    font-size: 32px;
-    margin-top: 30%;
-}
+    .banner {
+        font-size: 32px;
+        margin-top: 30%;
+    }
 }
