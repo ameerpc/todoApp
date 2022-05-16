@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# ToDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple ToDo App works based on browser inbuilt [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 ## Available Scripts
 
