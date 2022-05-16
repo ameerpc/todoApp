@@ -1,6 +1,6 @@
 # ToDo App
 
-Simple ToDo App works based on browser inbuilt [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+Simple ToDo App works based on browser inbuilt [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) API.
 
 ## Demo
 
