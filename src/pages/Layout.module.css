@@ -1,0 +1,44 @@
+ul, li {
+    display: inline-block;
+    margin-right: 25px;
+}
+a:link, a:visited, a:hover, a:active {
+    color: inherit;
+}
+a {
+    background-color: rgba(40, 40, 40, 1);
+    box-sizing: border-box;
+    padding: 6px 10px 2px;
+    border-radius: 6px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-around;
+    align-items: center;
+}
+.logo {
+    max-width: 200px;
+    font-size: 20px;
+    display: inline;
+    font-size: xx-large;
+    font-weight: 600;
+    align-self: flex-start;
+}
+.nav_container {
+    display: flex;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .nav_container {
+        flex-direction: column;
+    }
+    ul, li {
+        margin-top: 14px;
+    }
+}

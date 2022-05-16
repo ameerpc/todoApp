@@ -1,0 +1,16 @@
+:root {
+    --bg-color: rgba(23, 23, 23, 1);
+    --color: rgba(245, 245, 245, 1);
+}
+
+* {
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--color)
+}
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,16 @@
+.container {
+    display: block;
+}
+
+.banner {
+    text-align: center;
+    margin-top: 20%;
+    font-size: 38px;
+}
+
+@media screen and (max-width: 600px) {
+.banner {
+    font-size: 32px;
+    margin-top: 30%;
+}
+}

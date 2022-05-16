@@ -1,0 +1,24 @@
+.container {
+    background-color: #303245;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 150px;
+    padding: 15px;
+    width: 250px;
+    margin-top: 15px;
+    align-self: center;
+}
+.button {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 13px;
+    height: 25px;
+    outline: 0;
+    text-align: center;
+    width: 30%;
+    float: right;
+}
