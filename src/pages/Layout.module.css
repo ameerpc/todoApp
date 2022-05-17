@@ -1,5 +1,5 @@
 :root {
-    --bg-color: rgba(23, 23, 23, 1);
+    --bg-color: rgba(23, 23, 23, 0.9);
     --color: rgba(245, 245, 245, 1);
     --link-bg-color: rgba(45, 45, 45, 1);
 }
@@ -20,6 +20,7 @@ a {
 }
 .container {
     margin: 10px;
+    min-height: 100vh;
 }
 .nav {
     display: flex;
@@ -56,9 +57,7 @@ a {
     .nav_link {
         display: flex;
         flex-direction: column;
-    }
-    .nav_link > li {
-        margin-top: 28px;
+        min-height: 200px;
     }
 
 }
