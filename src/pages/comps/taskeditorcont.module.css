@@ -1,19 +1,25 @@
+:root {
+    --taskeditor-bg-color: #15172b;
+    --taskeditor-title-color: #eee;
+    --taskeditor-subtitle-color: #eee;
+}
+
 .form {
-    background-color: #15172b;
+    background-color: var(--taskeditor-bg-color);
     border-radius: 20px;
     box-sizing: border-box;
     height: 450px;
     padding: 20px;
-    width: 320px;
+    width: 100%;
 }
 .title {
-    color: #eee;
+    color: var(--taskeditor-title-color);
     font-size: 36px;
     font-weight: 600;
     margin-top: 30px;
 }
 .subtitle {
-    color: #eee;
+    color: var(--taskeditor-subtitle-color);
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
