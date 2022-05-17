@@ -7,18 +7,28 @@ import taskStyles from './Todo.module.css'
 const Todo = () => {
     const [todolist, setTodolist] = useState([])
 
-    const handleSubmit = (title, para, event) => {
+    const handleSubmit = (taskTitle, taskPara, event) => {
         event.preventDefault()
         
         if(event.target.value === 'Save') {
-            console.log('Saved !')
-            setTodolist(previousValue => {return [ ...previousValue, {title: title, para: para}]})
-            localStorage.setItem(title, para)
+            if(localStorage.getItem(taskTitle) === null) {
+                const taskId = Math.floor(Math.random() * 101)
+                setTodolist(
+                    previousValue => {
+                        return [ ...previousValue, {id: taskId, title: taskTitle, para: taskPara}]
+                    })
+                localStorage.setItem(taskTitle, taskPara)
+                console.log('Saved !')
+            }
+            else console.log('Warning: task exists!')
         }
         else if(event.target.value === 'Delete') {
-            console.log('delete')
-            setTodolist(todolist.filter(item => item.title !== title))
-            localStorage.removeItem(title)
+            if(localStorage.getItem(taskTitle) !== null) {
+                setTodolist(todolist.filter(item => item.title !== taskTitle))
+                localStorage.removeItem(taskTitle)
+                console.log('delete')
+            }
+            else console.log('Warning: task not exist !')
         }
         
     }

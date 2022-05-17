@@ -20,8 +20,8 @@ const TaskEditCont = (props) => {
                     <div className={taskStyles.cut}></div>
                     <label className={taskStyles.placeholder}>Discription</label>
                 </div>
-                <button onClick={(event) => {props.parentCallBack(taskhead, taskpara, event)}} className={taskStyles.submit} value='Delete'>Delete</button>
-                <button onClick={(event) => {props.parentCallBack(taskhead, taskpara, event)}} className={`${taskStyles.submit} ${taskStyles.ms}`} value='Save'>Save</button>
+                <button onClick={(event) => {(taskhead === "" && taskpara === "")?console.log('empty task'):props.parentCallBack(taskhead, taskpara, event)}} className={taskStyles.submit} value='Delete'>Delete</button>
+                <button onClick={(event) => {(taskhead === "" && taskpara === "")?console.log('empty task'):props.parentCallBack(taskhead, taskpara, event)}} className={`${taskStyles.submit} ${taskStyles.ms}`} value='Save'>Save</button>
             </div>
         </>
     )

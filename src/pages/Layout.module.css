@@ -1,7 +1,8 @@
 :root {
-    --bg-color: rgba(23, 23, 23, 0.9);
+    --bg-color: rgba(40, 40, 40, 1);
     --color: rgba(245, 245, 245, 1);
-    --link-bg-color: rgba(18, 18, 18, 1);
+    --link-bg-color: rgba(66, 66, 66, 1);
+    --link-active-bg-color: rgba(32, 32, 32, 1);
 }
 body {
     background-color: var(--bg-color);
@@ -11,6 +12,9 @@ body {
 }
 a:link, a:visited, a:hover, a:active {
     color: var(--color);
+}
+a:active {
+    background-color: var(--link-active-bg-color);
 }
 a {
     box-sizing: border-box;

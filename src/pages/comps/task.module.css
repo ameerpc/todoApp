@@ -2,9 +2,9 @@
     background-color: #303245;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 150px;
+    min-height: 150px;
     padding: 15px;
-    width: 250px;
+    min-width: 250px;
     margin-top: 15px;
     align-self: center;
 }

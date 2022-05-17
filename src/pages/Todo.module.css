@@ -14,7 +14,7 @@
 .task_container {
     background-image: linear-gradient(to right, rgba(21,23,43,0), rgba(21,23,43,1), rgba(21,23,43,1),rgba(21,23,43,0));
     max-height: calc(100vh - 78px - 20px - 10px); /* calc(viewport_height - nav_height - 2 * body_margin - element_margin__top&bottom)*/
-    max-width: 40vw;
+    width: 40vw;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;

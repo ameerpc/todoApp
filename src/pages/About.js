@@ -4,7 +4,7 @@ const About = () => {
         marginTop: "20%"
     }
     return (
-        <h1 style={myStyle}>About us</h1>
+        <h1 style={myStyle}>About app</h1>
     )
 }
 
