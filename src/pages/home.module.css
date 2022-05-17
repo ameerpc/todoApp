@@ -1,5 +1,5 @@
 :root {
-    --title-color: #4a148c;
+    --title-color: #512da8;
     --subtitle-color: #f3e5f5;
 }
 .container {
@@ -11,7 +11,7 @@
 }
 
 .banner_img {
-    align-self: flex-end;
+    align-self: center;
 }
 .img {
     max-width: 40vw;
