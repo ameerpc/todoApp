@@ -1,24 +1,24 @@
 import { useState, useEffect } from 'react'
+import TaskEditCont from './comps/TaskEditCont'
 import Task from './comps/Task'
 import taskStyles from './Todo.module.css'
 
+
 const Todo = () => {
     const [todolist, setTodolist] = useState([])
-    const [taskhead, setTaskhead] = useState("")
-    const [taskpara, setTaskpara] = useState("")
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (title, para, event) => {
         event.preventDefault()
         
         if(event.target.value === 'Save') {
             console.log('Saved !')
-            setTodolist(previousValue => {return [ ...previousValue, {title: taskhead, para: taskpara}]})
-            localStorage.setItem(taskhead, taskpara)
+            setTodolist(previousValue => {return [ ...previousValue, {title: title, para: para}]})
+            localStorage.setItem(title, para)
         }
         else if(event.target.value === 'Delete') {
             console.log('delete')
-            setTodolist(todolist.filter(item => item.title !== taskhead))
-            localStorage.removeItem(taskhead)
+            setTodolist(todolist.filter(item => item.title !== title))
+            localStorage.removeItem(title)
         }
         
     }
@@ -36,29 +36,16 @@ const Todo = () => {
     }, [])
 
     return (
-        <div className={taskStyles.container}>
-            <div className={taskStyles.form_container}>
-                <div className={taskStyles.form}>
-                    <div className={taskStyles.title}>Tasks</div>
-                    <div className={taskStyles.subtitle}>Let's create/edit tasks</div> 
-                    <div className={taskStyles.input_container}>
-                        <input type='text' value={taskhead} onChange={(e) => setTaskhead(e.target.value)} className={taskStyles.textInput} />
-                        <div className={taskStyles.cut}></div>
-                        <label className={taskStyles.placeholder}>Task</label>
-                    </div>
-                    <div className={taskStyles.input_container}>
-                        <input type='text' value={taskpara} onChange={(e) => setTaskpara(e.target.value)} className={taskStyles.textInput} />
-                        <div className={taskStyles.cut}></div>
-                        <label className={taskStyles.placeholder}>Discription</label>
-                    </div>
-                    <button onClick={handleSubmit} className={taskStyles.submit} value='Delete'>Delete</button>
-                    <button onClick={handleSubmit} className={`${taskStyles.submit} ${taskStyles.ms}`} value='Save'>Save</button>
+        <>
+            <div className={taskStyles.container}>
+                <div className={taskStyles.form_container}>
+                    <TaskEditCont parentCallBack={handleSubmit}  />
+                </div>
+                <div className={taskStyles.task_container}>
+                    {todolist.map((task) => <Task key={task.id} tasktitle={task.title} taskpara={task.para} parentCallBack1 = {handleDone} />)}
                 </div>
             </div>
-            <div className={taskStyles.task_container}>
-                {todolist.map((task) => <Task key={task.id} tasktitle={task.title} taskpara={task.para} parentCallBack1 = {handleDone} />)}
-            </div>
-        </div>
+        </>
     )
 }
 
