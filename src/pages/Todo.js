@@ -5,17 +5,24 @@ import taskStyles from './Todo.module.css'
 
 
 const Todo = () => {
+    // Array of TASKS
     const [todolist, setTodolist] = useState([])
 
-    const handleSubmit = (taskTitle, taskPara, event) => {
+    /* Handle task insertion, deletion and edition */
+    const handleSubmit = (taskTitle, taskPara,event) => {
         event.preventDefault()
-        
+        // 
         if(event.target.value === 'Save') {
             if(localStorage.getItem(taskTitle) === null) {
-                const taskId = Math.floor(Math.random() * 101)
                 setTodolist(
                     previousValue => {
-                        return [ ...previousValue, {id: taskId, title: taskTitle, para: taskPara}]
+                        return [ 
+                            ...previousValue, { 
+                                id: Math.floor(Math.random() * 1001), 
+                                title: taskTitle, 
+                                para: taskPara
+                            }
+                        ]
                     })
                 localStorage.setItem(taskTitle, taskPara)
                 console.log('Saved !')
@@ -32,17 +39,24 @@ const Todo = () => {
         }
         
     }
+
+    /* Delete task from localStorage when it is done */
     const handleDone = (task) => {
         console.log('Done ' + task)
         setTodolist(todolist.filter(item => item.title !== task))
         localStorage.removeItem(task)
     }
 
+    /* Initial fetch and loade tasks from localStorage */
     useEffect(() => {
         setTodolist([])
-        const taskKeys = Object.keys(localStorage)
-        const a = taskKeys.map((value, index, array) => { return {id: index, title: array[index], para: localStorage.getItem(array[index])}})
-        setTodolist(a)
+        setTodolist(
+            Object.keys(localStorage).map(
+                (value, index, array) => { 
+                    return {id: index, title: array[index], para: localStorage.getItem(array[index])}
+                    }
+                )
+            )
     }, [])
 
     return (
@@ -52,7 +66,7 @@ const Todo = () => {
                     <TaskEditCont parentCallBack={handleSubmit}  />
                 </div>
                 <div className={taskStyles.task_container}>
-                    {todolist.map((task) => <Task key={task.id} tasktitle={task.title} taskpara={task.para} parentCallBack1 = {handleDone} />)}
+                    {todolist.slice(0).reverse().map((task) => <Task key={task.id} tasktitle={task.title} taskpara={task.para} parentCallBack1 = {handleDone} />)}
                 </div>
             </div>
         </>

@@ -5,6 +5,18 @@ const TaskEditCont = (props) => {
     const [taskhead, setTaskhead] = useState("")
     const [taskpara, setTaskpara] = useState("")
 
+    const handleButtonClick = (event) => {
+        /* Check input[text] empty or not */
+        if(taskhead === "" && taskpara === ""){
+            console.log('Warning: empty task')
+        }
+        else{
+            props.parentCallBack(taskhead, taskpara, event)
+            setTaskhead("") // Clear input[text] value
+            setTaskpara("") // Clear input[text] value
+        }
+    }
+
     return (
         <>
             <div className={taskStyles.form}>
@@ -20,8 +32,18 @@ const TaskEditCont = (props) => {
                     <div className={taskStyles.cut}></div>
                     <label className={taskStyles.placeholder}>Discription</label>
                 </div>
-                <button onClick={(event) => {(taskhead === "" && taskpara === "")?console.log('empty task'):props.parentCallBack(taskhead, taskpara, event)}} className={taskStyles.submit} value='Delete'>Delete</button>
-                <button onClick={(event) => {(taskhead === "" && taskpara === "")?console.log('empty task'):props.parentCallBack(taskhead, taskpara, event)}} className={`${taskStyles.submit} ${taskStyles.ms}`} value='Save'>Save</button>
+                <button 
+                onClick={handleButtonClick} 
+                className={taskStyles.submit} 
+                value='Delete'>
+                    Delete
+                </button>
+                <button 
+                onClick={handleButtonClick} 
+                className={`${taskStyles.submit} ${taskStyles.ms}`} 
+                value='Save'>
+                    Save
+                </button>
             </div>
         </>
     )
